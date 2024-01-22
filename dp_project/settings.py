@@ -31,6 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # My apps.
+    'apps.core',
+
+    # Default django apps.
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -114,6 +118,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 STATIC_URL = 'static/'
 
@@ -121,3 +128,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# My settings
+AUTH_USER_MODEL = 'core.User'
