@@ -10,12 +10,19 @@
     <link rel="icon" type="image/webp" href="{% static 'favicon.webp' %}">
     <title>Django Playground</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Pico CSS -->
     <link rel="stylesheet" href="{% static 'css/pico/pico.min.css' %}">
 
     <script src="https://unpkg.com/htmx.org@1.6.1"></script>
 </head>
 <body>
+    <nav>
+        <!-- Navigation links go here -->
+        <!-- Add as many links as you need -->
+        {% if user.is_authenticated %}
+            Hello {{ user }}
+        {% endif %}
+    </nav>
 
     <main class="container">
         {% block content %}
